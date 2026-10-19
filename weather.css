@@ -1,0 +1,199 @@
+:root{
+  --bg: #0b1220;
+  --card: rgba(255,255,255,.08);
+  --card2: rgba(255,255,255,.06);
+  --text: #e8eefc;
+  --muted: rgba(232,238,252,.75);
+  --border: rgba(255,255,255,.14);
+  --shadow: 0 20px 60px rgba(0,0,0,.35);
+}
+
+*{ box-sizing:border-box; }
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--text);
+  background: radial-gradient(1200px 700px at 15% 10%, #1b3a6b 0%, transparent 60%),
+              radial-gradient(900px 600px at 90% 20%, #3b1b6b 0%, transparent 55%),
+              var(--bg);
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  padding: 24px;
+}
+
+.app{ width:min(920px, 100%); }
+
+.top{
+  display:grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+.top h1{ margin:0; letter-spacing:.5px; }
+
+.search{
+  display:flex;
+  gap:10px;
+}
+.search input{
+  flex:1;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.06);
+  color: var(--text);
+  outline:none;
+}
+.search input::placeholder{ color: rgba(232,238,252,.55); }
+.search button{
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.12);
+  color: var(--text);
+  cursor:pointer;
+}
+.search button:hover{ background: rgba(255,255,255,.18); }
+
+.actions{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+.ghost{
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.06);
+  color: var(--text);
+  cursor:pointer;
+}
+.ghost:hover{ background: rgba(255,255,255,.12); }
+
+.card{
+  background: linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.05));
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(10px);
+}
+
+.status{
+  margin-bottom: 12px;
+  padding: 10px 12px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: rgba(0,0,0,.25);
+}
+.hidden{ display:none; }
+
+.current{
+  display:flex;
+  justify-content:space-between;
+  gap: 16px;
+  align-items:flex-start;
+}
+.place{ margin:0; font-size: 22px; font-weight: 700; }
+.desc{ margin:6px 0 0; color: var(--muted); }
+.time{ margin:10px 0 0; color: rgba(232,238,252,.65); font-size: 14px; }
+
+.tempRow{
+  display:flex;
+  gap: 10px;
+  align-items:center;
+  justify-content:flex-end;
+}
+.icon{ width: 62px; height: 62px; }
+.temp{ margin:0; font-size: 44px; font-weight: 800; line-height: 1; }
+.feels{ margin:6px 0 0; color: var(--muted); text-align:right; }
+
+.stats{
+  margin-top: 14px;
+  display:grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+.stat{
+  padding: 12px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: var(--card2);
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+}
+.stat span{ color: var(--muted); }
+
+.subhead{
+  margin: 18px 0 10px;
+  font-size: 16px;
+  color: rgba(232,238,252,.9);
+}
+
+.hourly{
+  display:flex;
+  gap:10px;
+  overflow:auto;
+  padding-bottom: 6px;
+}
+.hour{
+  min-width: 110px;
+  padding: 12px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: var(--card);
+}
+.hour p{ margin: 0; }
+.hour .t{ font-size: 14px; color: rgba(232,238,252,.75); }
+.hour .v{ font-size: 18px; font-weight: 700; margin-top: 6px; }
+.hour img{ width: 42px; height: 42px; margin-top: 6px; }
+
+.footer{
+  margin-top: 14px;
+  color: rgba(232,238,252,.6);
+}
+
+/* Weather backgrounds (body classes) */
+body.bg-clear{
+  background: radial-gradient(1200px 700px at 15% 10%, #2b7bff 0%, transparent 60%),
+              radial-gradient(900px 600px at 90% 20%, #00d4ff 0%, transparent 55%),
+              #071225;
+}
+
+body.bg-clouds{
+  background: radial-gradient(1200px 700px at 20% 10%, #5f6f85 0%, transparent 60%),
+              radial-gradient(900px 600px at 90% 20%, #334155 0%, transparent 55%),
+              #0b1220;
+}
+
+body.bg-rain{
+  background: radial-gradient(1200px 700px at 15% 10%, #1f3b73 0%, transparent 60%),
+              radial-gradient(900px 600px at 90% 20%, #0f766e 0%, transparent 55%),
+              #06101f;
+}
+
+body.bg-drizzle{
+  background: radial-gradient(1200px 700px at 15% 10%, #1f4f73 0%, transparent 60%),
+              radial-gradient(900px 600px at 90% 20%, #155e75 0%, transparent 55%),
+              #06101f;
+}
+
+body.bg-thunder{
+  background: radial-gradient(1200px 700px at 15% 10%, #2e1065 0%, transparent 60%),
+              radial-gradient(900px 600px at 90% 20%, #111827 0%, transparent 55%),
+              #050816;
+}
+
+body.bg-snow{
+  background: radial-gradient(1200px 700px at 15% 10%, #c7d2fe 0%, transparent 60%),
+              radial-gradient(900px 600px at 90% 20%, #e0f2fe 0%, transparent 55%),
+              #0b1220;
+}
+
+body.bg-mist{
+  background: radial-gradient(1200px 700px at 15% 10%, #94a3b8 0%, transparent 60%),
+              radial-gradient(900px 600px at 90% 20%, #64748b 0%, transparent 55%),
+              #0b1220;
+}

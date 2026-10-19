@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Weatherly</title>
+  <link rel="stylesheet" href="weather.css" />
+  <script src="app.js" defer></script>
+  <form action="getElementById"></form>
+</head>
+<body>
+  <main class="app">
+    <header class="top">
+      <h1>Weatherly</h1>
+
+      <form id="searchForm" class="search">
+        <input id="cityInput" type="text" placeholder="Search city (e.g., Lagos)" autocomplete="off" />
+        <button type="submit">Search</button>
+      </form>
+
+      <div class="actions">
+        <button id="geoBtn" type="button" class="ghost">Use my location</button>
+        <button id="unitBtn" type="button" class="ghost" aria-label="Toggle units">°C</button>
+      </div>
+    </header>
+
+    <section class="card" aria-live="polite">
+      <div id="status" class="status hidden"></div>
+
+      <div class="current">
+        <div class="left">
+          <p id="place" class="place">—</p>
+          <p id="desc" class="desc">—</p>
+          <p id="time" class="time">—</p>
+        </div>
+
+        <div class="right">
+          <div class="tempRow">
+            <img id="icon" class="icon" alt="" />
+            <div>
+              <p id="temp" class="temp">—</p>
+              <p id="feels" class="feels">—</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stats">
+        <div class="stat">
+          <span>Humidity</span>
+          <b id="humidity">—</b>
+        </div>
+        <div class="stat">
+          <span>Wind</span>
+          <b id="wind">—</b>
+        </div>
+        <div class="stat">
+          <span>Pressure</span>
+          <b id="pressure">—</b>
+        </div>
+        <div class="stat">
+          <span>Min / Max</span>
+          <b id="minmax">—</b>
+        </div>
+      </div>
+
+      <h2 class="subhead">Next hours</h2>
+      <div id="hourly" class="hourly"></div>
+    </section>
+
+    <footer class="footer">
+      <small>Built with HTML, CSS & JS • by AYOMIDE</small>
+    </footer>
+  </main> 
+</body>
+</html>
